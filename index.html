@@ -42,14 +42,14 @@
   </script>
 
   <style>
-    /* Degradê dourado metálico para textos de destaque */
+    /* Tipografia metálica em degradê dourado */
     .gold-gradient-text {
       background: linear-gradient(135deg, #FFF3C4 0%, #D4AF37 55%, #AA7C11 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    /* Brilho dourado refinado */
+    /* Brilho dourado premium */
     .gold-glow {
       box-shadow: 0 0 35px rgba(212, 175, 55, 0.22);
     }
@@ -57,23 +57,41 @@
       box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
     }
 
-    /* Máscara de fusão suave da base da foto com o fundo preto */
+    /* Fusão suave na base da foto com o fundo escuro */
     .mask-fade-bottom {
-      -webkit-mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
-      mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+    }
+
+    /* Otimização de nitidez e antialiasing para fotos e gráficos */
+    .hd-sharp-image {
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
+      transform: translateZ(0);
+      -webkit-font-smoothing: subpixel-antialiased;
+      backface-visibility: hidden;
+      filter: contrast(1.10) brightness(1.04) saturate(1.05);
+    }
+
+    .hd-sharp-logo {
+      image-rendering: -webkit-optimize-contrast;
+      transform: translateZ(0);
+      filter: contrast(1.08) brightness(1.02);
     }
   </style>
 </head>
 <body class="bg-darkBase text-[#EDEDED] font-body selection:bg-gold selection:text-black antialiased overflow-x-hidden">
 
-  <!-- ================= NAVBAR FIXA ================= -->
+  <!-- ================= NAVBAR ================= -->
   <header class="fixed top-0 left-0 w-full z-50 bg-[#0B0B0B]/90 backdrop-blur-md border-b border-amber-500/20 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       
-      <!-- Marca / Logo Miniatura -->
+      <!-- Logo Navbar -->
       <a href="#" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-full border border-amber-500/30 overflow-hidden bg-black p-0.5 group-hover:border-gold transition-colors flex items-center justify-center shadow-lg">
-          <img src="https://i.postimg.cc/bGD5Nv1R/logo-luciano-jpg.jpg" alt="Logo Luciano de Paula" class="w-full h-full object-cover rounded-full" />
+        <div class="w-11 h-11 rounded-full border border-amber-500/40 overflow-hidden bg-black p-0.5 group-hover:border-gold transition-colors flex items-center justify-center shadow-lg">
+          <img src="https://i.postimg.cc/bGD5Nv1R/logo-luciano-jpg.jpg" 
+               alt="Logo Luciano de Paula" 
+               class="w-full h-full object-cover rounded-full hd-sharp-logo" />
         </div>
         <div class="flex flex-col">
           <span class="font-title font-bold text-base tracking-wider uppercase gold-gradient-text">Luciano de Paula</span>
@@ -137,24 +155,25 @@
           </div>
         </div>
 
-        <!-- Card da Foto de Autoridade + Logo Sobreposta -->
+        <!-- Card da Foto de Autoridade com Filtros HD de Alta Definição -->
         <div class="lg:col-span-5 flex justify-center">
-          <div class="relative w-full max-w-[450px] group">
+          <div class="relative w-full max-w-[460px] group">
             <!-- Glow radial atrás do card -->
             <div class="absolute inset-0 bg-gold/20 rounded-3xl blur-[50px] transform group-hover:scale-105 transition-transform duration-500"></div>
 
             <div class="relative p-2.5 rounded-3xl bg-gradient-to-b from-[#222222] via-darkCard to-black border border-amber-500/30 gold-glow">
-              <div class="relative rounded-2xl overflow-hidden bg-black min-h-[380px] flex items-center justify-center">
+              <div class="relative rounded-2xl overflow-hidden bg-[#0A0A0A] min-h-[380px] flex items-center justify-center">
                 
-<!-- Foto Principal Otimizada com Nitidez e Clareza -->
-<img src="https://i.postimg.cc/DWJNyz1r/foto-luciano-jpg.jpg" 
-     alt="Luciano de Paula e Zezé Di Camargo" 
-     class="w-full h-auto object-cover mask-fade-bottom transition-all duration-700 group-hover:scale-105"
-     style="image-rendering: -webkit-optimize-contrast; filter: contrast(1.08) brightness(1.03) saturate(1.05);" />
+                <!-- Foto Principal com Zezé Di Camargo Otimizada em HD -->
+                <img src="https://i.postimg.cc/DWJNyz1r/foto-luciano-jpg.jpg" 
+                     alt="Luciano de Paula e Zezé Di Camargo" 
+                     class="w-full h-auto object-cover mask-fade-bottom hd-sharp-image transition-transform duration-700 group-hover:scale-105" />
 
                 <!-- Selo da Logo Dourada LP Sobreposto -->
                 <div class="absolute top-3 right-3 w-16 h-16 rounded-full border border-amber-500/60 bg-black/85 p-1 backdrop-blur-sm shadow-2xl flex items-center justify-center overflow-hidden">
-                  <img src="https://i.postimg.cc/bGD5Nv1R/logo-luciano-jpg.jpg" alt="Logo LP" class="w-full h-full object-cover rounded-full" />
+                  <img src="https://i.postimg.cc/bGD5Nv1R/logo-luciano-jpg.jpg" 
+                       alt="Logo LP" 
+                       class="w-full h-full object-cover rounded-full hd-sharp-logo" />
                 </div>
               </div>
 
@@ -213,7 +232,6 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
           <!-- Pilar 1: Composição -->
           <div class="p-8 sm:p-10 rounded-3xl bg-darkCard border border-amber-500/20 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group">
             <div>
@@ -249,7 +267,6 @@
               <p class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Estratégias de tráfego, engajamento e branding</p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
