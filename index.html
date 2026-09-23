@@ -42,35 +42,38 @@
   </script>
 
   <style>
+    /* Degradê dourado metálico para textos de destaque */
     .gold-gradient-text {
       background: linear-gradient(135deg, #FFF3C4 0%, #D4AF37 55%, #AA7C11 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+
+    /* Brilho dourado refinado */
     .gold-glow {
-      box-shadow: 0 0 35px rgba(212, 175, 55, 0.2);
+      box-shadow: 0 0 35px rgba(212, 175, 55, 0.22);
     }
     .gold-btn-glow:hover {
-      box-shadow: 0 0 28px rgba(212, 175, 55, 0.45);
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
     }
+
+    /* Máscara de fusão suave da base da foto com o fundo preto */
     .mask-fade-bottom {
-      -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
-      mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
     }
   </style>
 </head>
 <body class="bg-darkBase text-[#EDEDED] font-body selection:bg-gold selection:text-black antialiased overflow-x-hidden">
 
   <!-- ================= NAVBAR FIXA ================= -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-[#0B0B0B]/90 backdrop-blur-md border-b border-amber-500/20">
+  <header class="fixed top-0 left-0 w-full z-50 bg-[#0B0B0B]/90 backdrop-blur-md border-b border-amber-500/20 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       
       <!-- Marca / Logo Miniatura -->
       <a href="#" class="flex items-center gap-3 group">
-        <div class="w-11 h-11 rounded-full border border-amber-500/30 overflow-hidden bg-black p-0.5 group-hover:border-gold transition-colors flex items-center justify-center">
-          <img src="logo-luciano.jpeg" alt="Logo Luciano de Paula" class="w-full h-full object-cover rounded-full" 
-               onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" />
-          <i class="hidden fa-solid fa-music text-gold text-xs"></i>
+        <div class="w-11 h-11 rounded-full border border-amber-500/30 overflow-hidden bg-black p-0.5 group-hover:border-gold transition-colors flex items-center justify-center shadow-lg">
+          <img src="https://i.postimg.cc/bGD5Nv1R/logo-luciano-jpg.jpg" alt="Logo Luciano de Paula" class="w-full h-full object-cover rounded-full" />
         </div>
         <div class="flex flex-col">
           <span class="font-title font-bold text-base tracking-wider uppercase gold-gradient-text">Luciano de Paula</span>
@@ -78,19 +81,19 @@
         </div>
       </a>
 
-      <!-- Links de Navegação -->
+      <!-- Navegação -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
         <a href="#sobre" class="hover:text-gold transition-colors">Sobre</a>
         <a href="#atuacao" class="hover:text-gold transition-colors">Áreas de Atuação</a>
         <a href="#bastidores" class="hover:text-gold transition-colors">Parcerias</a>
-        <a href="#contato" class="hover:text-gold transition-colors">Contacto</a>
+        <a href="#contato" class="hover:text-gold transition-colors">Contato</a>
       </nav>
 
-      <!-- Botão Direto de Ação Navbar -->
+      <!-- Botão Direto Navbar -->
       <a href="https://wa.me/5562992376109" target="_blank" rel="noopener noreferrer" 
          class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold-gradient text-black font-semibold text-xs tracking-wider uppercase transition-all duration-300 transform hover:scale-105 gold-btn-glow">
         <i class="fa-brands fa-whatsapp text-sm"></i>
-        <span>Contacto</span>
+        <span>Contato</span>
       </a>
     </div>
   </header>
@@ -98,6 +101,7 @@
   <main class="pt-20">
     <!-- ================= HERO SECTION ================= -->
     <section class="relative min-h-[92vh] flex items-center justify-center px-6 py-16 overflow-hidden">
+      <!-- Glow dourado no fundo -->
       <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-gold/10 rounded-full blur-[150px] pointer-events-none"></div>
 
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
@@ -133,33 +137,23 @@
           </div>
         </div>
 
-        <!-- Bloco da Imagem com Zezé Di Camargo + Logo Sobreposto -->
+        <!-- Card da Foto de Autoridade + Logo Sobreposta -->
         <div class="lg:col-span-5 flex justify-center">
           <div class="relative w-full max-w-[450px] group">
+            <!-- Glow radial atrás do card -->
             <div class="absolute inset-0 bg-gold/20 rounded-3xl blur-[50px] transform group-hover:scale-105 transition-transform duration-500"></div>
 
             <div class="relative p-2.5 rounded-3xl bg-gradient-to-b from-[#222222] via-darkCard to-black border border-amber-500/30 gold-glow">
-              <div class="relative rounded-2xl overflow-hidden bg-black min-h-[360px] flex items-center justify-center">
+              <div class="relative rounded-2xl overflow-hidden bg-black min-h-[380px] flex items-center justify-center">
                 
-                <!-- Foto com fusão no fundo escuro -->
-                <img src="foto-luciano.jpeg" 
-                     alt="Luciano de Paula com Zezé Di Camargo" 
-                     class="w-full h-auto object-cover mask-fade-bottom transition-transform duration-700 group-hover:scale-105"
-                     onerror="this.style.display='none'; document.getElementById('aviso-foto').classList.remove('hidden');" />
-                
-                <!-- Mensagem de ajuda caso o ficheiro não esteja na pasta -->
-                <div id="aviso-foto" class="hidden text-center p-6 border border-dashed border-gold/40 rounded-xl m-4 bg-black/60">
-                  <i class="fa-regular fa-image text-3xl text-gold mb-2 block"></i>
-                  <p class="text-xs text-gray-300 font-medium">Salve a foto com o Zezé Di Camargo como:</p>
-                  <code class="text-xs text-gold font-bold bg-darkCard px-2 py-1 rounded mt-1 inline-block">foto-luciano.jpg</code>
-                  <p class="text-[11px] text-gray-400 mt-2">na mesma pasta deste ficheiro HTML.</p>
-                </div>
+                <!-- Foto Principal com Zezé Di Camargo -->
+                <img src="https://i.postimg.cc/DWJNyz1r/foto-luciano-jpg.jpg" 
+                     alt="Luciano de Paula e Zezé Di Camargo" 
+                     class="w-full h-auto object-cover mask-fade-bottom transition-transform duration-700 group-hover:scale-105" />
 
-                <!-- Logo Sobreposto no Canto Superior Direito -->
-                <div class="absolute top-3 right-3 w-16 h-16 rounded-full border border-amber-500/50 bg-black/85 p-1 backdrop-blur-sm shadow-xl flex items-center justify-center overflow-hidden">
-                  <img src="logo-luciano.jpg" alt="Logo LP" class="w-full h-full object-cover rounded-full" 
-                       onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" />
-                  <span class="hidden text-[10px] font-bold text-gold">LP</span>
+                <!-- Selo da Logo Dourada LP Sobreposto -->
+                <div class="absolute top-3 right-3 w-16 h-16 rounded-full border border-amber-500/60 bg-black/85 p-1 backdrop-blur-sm shadow-2xl flex items-center justify-center overflow-hidden">
+                  <img src="https://i.postimg.cc/bGD5Nv1R/logo-luciano-jpg.jpg" alt="Logo LP" class="w-full h-full object-cover rounded-full" />
                 </div>
               </div>
 
@@ -187,28 +181,28 @@
         <div class="p-8 sm:p-12 rounded-3xl bg-darkCard border border-amber-500/20 gold-glow">
           <div class="space-y-6 text-gray-300 font-light leading-relaxed text-base sm:text-lg">
             <p>
-              <strong class="text-white font-semibold">Luciano de Paula</strong> une o talento autoral de composição ao ecossistema moderno de distribuição e plataformas online.
+              <strong class="text-white font-semibold">Luciano de Paula</strong> combina a arte da composição de sucessos ao ecossistema contemporâneo de plataformas e posicionamento online.
             </p>
             <p>
-              Com sensibilidade para construir melodias cativantes e refrões fortes, a sua actuação abrange também a estratégia técnica: posicionamento de canais, gestão de tráfego, audiência e retenção.
+              Com sensibilidade para melodias envolventes e refrões fortes, sua atuação une a criação autoral à inteligência estratégica de tráfego, gestão de audiência e monetização no mercado digital.
             </p>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-8 border-t border-white/10">
             <div class="flex items-center gap-3 text-gold">
               <i class="fa-solid fa-check-circle text-lg"></i>
-              <span class="text-sm font-medium text-gray-200">Refrões e conceitos estruturados para alta adesão</span>
+              <span class="text-sm font-medium text-gray-200">Refrões e métricas de alta identificação popular</span>
             </div>
             <div class="flex items-center gap-3 text-gold">
               <i class="fa-solid fa-check-circle text-lg"></i>
-              <span class="text-sm font-medium text-gray-200">Visão técnica de plataformas e distribuição</span>
+              <span class="text-sm font-medium text-gray-200">Visão técnica para tração, audiência e lançamentos</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= SEÇÃO DE DOIS PILARES ================= -->
+    <!-- ================= SEÇÃO DOS DOIS PILARES ================= -->
     <section id="atuacao" class="py-24 px-6">
       <div class="max-w-6xl mx-auto">
         <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
@@ -218,7 +212,8 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <!-- Pilar 1 -->
+          
+          <!-- Pilar 1: Composição -->
           <div class="p-8 sm:p-10 rounded-3xl bg-darkCard border border-amber-500/20 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group">
             <div>
               <div class="w-14 h-14 rounded-2xl bg-black border border-amber-500/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
@@ -227,16 +222,16 @@
               <p class="text-xs uppercase tracking-widest text-gold font-semibold mb-2">Pilar 01</p>
               <h3 class="font-title text-2xl font-bold mb-4 text-white">Composição & Arte Fonográfica</h3>
               <p class="text-gray-400 text-sm leading-relaxed mb-6 font-light">
-                Criação de obras inéditas com arranjos conceituais e ganchos líricos marcantes, focados no apelo popular, ligação emocional e dinâmicas de palco.
+                Desenvolvimento de letras autorais, arranjos conceituais e melodias estruturadas com foco no mercado fonográfico e na energia dos palcos.
               </p>
             </div>
             <div class="space-y-2 pt-4 border-t border-white/5 text-xs text-gray-300">
-              <p class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Letras e métricas com alta fixação</p>
-              <p class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Repertório alinhado com o mercado atual</p>
+              <p class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Refrões envolventes com apelo emocional direto</p>
+              <p class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Repertório autoral alinhado ao mercado</p>
             </div>
           </div>
 
-          <!-- Pilar 2 -->
+          <!-- Pilar 2: Plataformas Digitais & Marketing -->
           <div class="p-8 sm:p-10 rounded-3xl bg-darkCard border border-amber-500/20 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group">
             <div>
               <div class="w-14 h-14 rounded-2xl bg-black border border-amber-500/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
@@ -245,14 +240,15 @@
               <p class="text-xs uppercase tracking-widest text-gold font-semibold mb-2">Pilar 02</p>
               <h3 class="font-title text-2xl font-bold mb-4 text-white">Plataformas Digitais & Marketing</h3>
               <p class="text-gray-400 text-sm leading-relaxed mb-6 font-light">
-                Planeamento de lançamentos e estruturação de presença online em canais de streaming e redes, transformando conteúdos em activos de tração contínua.
+                Gestão estratégica de canais, presença online nas principais plataformas de áudio/vídeo e campanhas com foco em alcance sustentável.
               </p>
             </div>
             <div class="space-y-2 pt-4 border-t border-white/5 text-xs text-gray-300">
-              <p class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Gestão e monetização em plataformas</p>
-              <p class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Estratégias de escala e posicionamento</p>
+              <p class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Otimização e distribuição em canais digitais</p>
+              <p class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Estratégias de tráfego, engajamento e branding</p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -261,8 +257,8 @@
     <section id="bastidores" class="py-20 px-6 bg-[#0E0E0E] border-y border-amber-500/15">
       <div class="max-w-6xl mx-auto text-center space-y-10">
         <div class="max-w-2xl mx-auto space-y-2">
-          <p class="text-xs uppercase tracking-widest text-gold font-semibold">Credibilidade</p>
-          <h2 class="font-title text-3xl font-bold">Presença no Mercado Artístico</h2>
+          <p class="text-xs uppercase tracking-widest text-gold font-semibold">Credibilidade & Presença</p>
+          <h2 class="font-title text-3xl font-bold">Conexões no Meio Musical e Empresarial</h2>
         </div>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -280,7 +276,7 @@
           </div>
           <div class="p-6 rounded-2xl bg-black/60 border border-amber-500/15">
             <i class="fa-solid fa-handshake text-gold text-2xl mb-2"></i>
-            <p class="font-semibold text-sm">Parcerias de Valor</p>
+            <p class="font-semibold text-sm">Parcerias Sólidas</p>
           </div>
         </div>
       </div>
@@ -296,20 +292,23 @@
         </h2>
         
         <p class="text-gray-400 text-base sm:text-lg font-light">
-          Entre em contacto direto para aquisição de composições ou desenvolvimento de estratégias de marketing digital.
+          Entre em contato direto para composições inéditas ou estratégias de plataformas e marketing digital.
         </p>
 
+        <!-- Botões de Contato -->
         <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-5">
+          <!-- WhatsApp -->
           <a href="https://wa.me/5562992376109" target="_blank" rel="noopener noreferrer"
              class="w-full sm:w-auto px-10 py-5 rounded-full bg-gold-gradient text-black font-bold text-sm tracking-wider uppercase transition-all duration-300 transform hover:scale-105 gold-btn-glow flex items-center justify-center gap-3">
             <i class="fa-brands fa-whatsapp text-2xl"></i>
             <span>WhatsApp: +55 (62) 99237-6109</span>
           </a>
 
+          <!-- Instagram -->
           <a href="https://www.instagram.com/lucianodepaula62" target="_blank" rel="noopener noreferrer"
              class="w-full sm:w-auto px-10 py-5 rounded-full border border-amber-500/40 hover:border-gold bg-darkCard text-[#EDEDED] font-semibold text-sm tracking-wider uppercase transition-all duration-300 hover:bg-[#202020] flex items-center justify-center gap-3">
             <i class="fa-brands fa-instagram text-gold text-2xl"></i>
-            <span>@lucianodepaula62</span>
+            <span>Instagram: @lucianodepaula62</span>
           </a>
         </div>
       </div>
