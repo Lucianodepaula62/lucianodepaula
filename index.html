@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-PT" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luciano de Paula | Compositor & Especialista Digital</title>
+  <title>Luciano de Paula | Compositor & Especialista em Plataformas Digitais</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  
   <!-- Google Fonts: Syne & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
+  
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
@@ -23,9 +25,8 @@
             body: ['Plus Jakarta Sans', 'sans-serif'],
           },
           colors: {
-            brandDark: '#0B0B0B',
-            brandCard: '#141414',
-            brandCardBorder: 'rgba(212, 175, 55, 0.25)',
+            darkBase: '#0B0B0B',
+            darkCard: '#181818',
             gold: {
               light: '#F3E5AB',
               DEFAULT: '#D4AF37',
@@ -34,7 +35,6 @@
           },
           backgroundImage: {
             'gold-gradient': 'linear-gradient(135deg, #F3E5AB 0%, #D4AF37 50%, #AA7C11 100%)',
-            'gold-text': 'linear-gradient(135deg, #FFF1B0 0%, #D4AF37 55%, #AA7C11 100%)',
           }
         }
       }
@@ -43,134 +43,131 @@
 
   <style>
     .gold-gradient-text {
-      background: linear-gradient(135deg, #FFF3C4 0%, #D4AF37 50%, #AA7C11 100%);
+      background: linear-gradient(135deg, #FFF3C4 0%, #D4AF37 55%, #AA7C11 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .gold-border-glow {
-      box-shadow: 0 0 25px rgba(212, 175, 55, 0.12);
+    .gold-glow {
+      box-shadow: 0 0 35px rgba(212, 175, 55, 0.2);
     }
-    .gold-button-glow:hover {
-      box-shadow: 0 0 30px rgba(212, 175, 55, 0.45);
+    .gold-btn-glow:hover {
+      box-shadow: 0 0 28px rgba(212, 175, 55, 0.45);
+    }
+    .mask-fade-bottom {
+      -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+      mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
     }
   </style>
 </head>
-<body class="bg-brandDark text-[#EDEDED] font-body selection:bg-gold selection:text-black antialiased overflow-x-hidden">
+<body class="bg-darkBase text-[#EDEDED] font-body selection:bg-gold selection:text-black antialiased overflow-x-hidden">
 
-  <!-- ================= NAVBAR ================= -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-[#0B0B0B]/85 backdrop-blur-md border-b border-gold/15 transition-all duration-300">
+  <!-- ================= NAVBAR FIXA ================= -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-[#0B0B0B]/90 backdrop-blur-md border-b border-amber-500/20">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+      
+      <!-- Marca / Logo Miniatura -->
       <a href="#" class="flex items-center gap-3 group">
-        <div class="w-10 h-10 rounded-full border border-gold/40 flex items-center justify-center bg-black/60 group-hover:border-gold transition-colors">
-          <i class="fa-solid fa-music text-gold text-sm"></i>
+        <div class="w-11 h-11 rounded-full border border-amber-500/30 overflow-hidden bg-black p-0.5 group-hover:border-gold transition-colors flex items-center justify-center">
+          <img src="logo-luciano.jpg" alt="Logo Luciano de Paula" class="w-full h-full object-cover rounded-full" 
+               onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" />
+          <i class="hidden fa-solid fa-music text-gold text-xs"></i>
         </div>
-        <span class="font-title font-bold text-lg tracking-wider uppercase gold-gradient-text">Luciano de Paula</span>
+        <div class="flex flex-col">
+          <span class="font-title font-bold text-base tracking-wider uppercase gold-gradient-text">Luciano de Paula</span>
+          <span class="text-[10px] text-gray-400 tracking-widest uppercase -mt-0.5">Compositor & Digital</span>
+        </div>
       </a>
 
+      <!-- Links de Navegação -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
         <a href="#sobre" class="hover:text-gold transition-colors">Sobre</a>
-        <a href="#solucoes" class="hover:text-gold transition-colors">Soluções</a>
-        <a href="#diferenciais" class="hover:text-gold transition-colors">Diferenciais</a>
-        <a href="#depoimentos" class="hover:text-gold transition-colors">Testemunhos</a>
+        <a href="#atuacao" class="hover:text-gold transition-colors">Áreas de Atuação</a>
+        <a href="#bastidores" class="hover:text-gold transition-colors">Parcerias</a>
+        <a href="#contato" class="hover:text-gold transition-colors">Contacto</a>
       </nav>
 
+      <!-- Botão Direto de Ação Navbar -->
       <a href="https://wa.me/5562992376109" target="_blank" rel="noopener noreferrer" 
-         class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold-gradient text-black font-semibold text-xs tracking-wider uppercase transition-all duration-300 transform hover:scale-105 gold-button-glow">
+         class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gold-gradient text-black font-semibold text-xs tracking-wider uppercase transition-all duration-300 transform hover:scale-105 gold-btn-glow">
         <i class="fa-brands fa-whatsapp text-sm"></i>
-        <span>Iniciar Contacto</span>
+        <span>Contacto</span>
       </a>
     </div>
   </header>
 
   <main class="pt-20">
     <!-- ================= HERO SECTION ================= -->
-    <section class="relative min-h-[90vh] flex items-center justify-center px-6 py-20 overflow-hidden">
-      <!-- Glow de iluminação de fundo -->
-      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[650px] h-[650px] bg-gold/10 rounded-full blur-[140px] pointer-events-none"></div>
+    <section class="relative min-h-[92vh] flex items-center justify-center px-6 py-16 overflow-hidden">
+      <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-gold/10 rounded-full blur-[150px] pointer-events-none"></div>
 
-      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-14 items-center relative z-10">
+      <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
         
+        <!-- Apresentação e Proposta de Valor -->
         <div class="lg:col-span-7 text-center lg:text-left space-y-6">
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/30 bg-[#171717] text-gold text-xs tracking-widest uppercase font-semibold">
-            <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
-            Composição Artística & Crescimento Digital
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-amber-500/30 bg-[#141414] text-gold text-xs tracking-widest uppercase font-semibold">
+            <span class="w-2 h-2 rounded-full bg-gold animate-ping"></span>
+            Composição Musical & Inteligência de Tráfego
           </div>
-          
-          <h1 class="font-title text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.15] tracking-tight">
-            A sensibilidade da <span class="gold-gradient-text">composição musical</span> aliada ao poder das <span class="gold-gradient-text">plataformas digitais</span>.
+
+          <h1 class="font-title text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.12] tracking-tight">
+            A sensibilidade da <span class="gold-gradient-text">composição</span> unida ao alcance do <span class="gold-gradient-text">marketing digital</span>.
           </h1>
 
           <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 font-light leading-relaxed">
-            Unindo a caneta afinada à inteligência analítica de dados e marketing, desenvolvo projetos sonoros envolventes e posicionamentos estratégicos que transformam alcance em autoridade consistente.
+            Criando narrativas e refrões de alto impacto comercial enquanto estruturo a presença, métricas e distribuição em plataformas para posicionar obras e potencializar audiências.
           </p>
 
+          <!-- CTAs -->
           <div class="pt-4 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
             <a href="https://wa.me/5562992376109" target="_blank" rel="noopener noreferrer"
-               class="w-full sm:w-auto px-8 py-4 rounded-full bg-gold-gradient text-black font-bold text-sm tracking-wider uppercase transition-all duration-300 transform hover:scale-105 gold-button-glow flex items-center justify-center gap-3">
+               class="w-full sm:w-auto px-8 py-4 rounded-full bg-gold-gradient text-black font-bold text-sm tracking-wider uppercase transition-all duration-300 transform hover:scale-105 gold-btn-glow flex items-center justify-center gap-3">
               <i class="fa-brands fa-whatsapp text-lg"></i>
               <span>Falar no WhatsApp</span>
             </a>
 
             <a href="https://www.instagram.com/lucianodepaula62" target="_blank" rel="noopener noreferrer"
-               class="w-full sm:w-auto px-8 py-4 rounded-full border border-gold/40 hover:border-gold bg-[#151515] text-[#EDEDED] font-semibold text-sm tracking-wider uppercase transition-all duration-300 hover:bg-[#202020] flex items-center justify-center gap-2">
+               class="w-full sm:w-auto px-8 py-4 rounded-full border border-amber-500/40 hover:border-gold bg-darkCard text-[#EDEDED] font-semibold text-sm tracking-wider uppercase transition-all duration-300 hover:bg-[#222222] flex items-center justify-center gap-2">
               <i class="fa-brands fa-instagram text-gold text-lg"></i>
               <span>@lucianodepaula62</span>
             </a>
           </div>
         </div>
 
-        <!-- Emblema / Logótipo Oficial -->
+        <!-- Bloco da Imagem com Zezé Di Camargo + Logo Sobreposto -->
         <div class="lg:col-span-5 flex justify-center">
-          <div class="relative p-2 rounded-3xl border border-gold/30 bg-gradient-to-b from-[#1C1C1C] to-[#0E0E0E] gold-border-glow transition-transform duration-500 hover:scale-[1.02]">
-            <img src="Gemini_Generated_Image_r8b3dr8b3dr8b3dr.jpeg" alt="Luciano de Paula - Compositor e Estrategista Digital" class="w-full max-w-[420px] rounded-2xl object-cover shadow-2xl" />
-          </div>
-        </div>
+          <div class="relative w-full max-w-[450px] group">
+            <div class="absolute inset-0 bg-gold/20 rounded-3xl blur-[50px] transform group-hover:scale-105 transition-transform duration-500"></div>
 
-      </div>
-    </section>
+            <div class="relative p-2.5 rounded-3xl bg-gradient-to-b from-[#222222] via-darkCard to-black border border-amber-500/30 gold-glow">
+              <div class="relative rounded-2xl overflow-hidden bg-black min-h-[360px] flex items-center justify-center">
+                
+                <!-- Foto com fusão no fundo escuro -->
+                <img src="foto-luciano.jpg" 
+                     alt="Luciano de Paula com Zezé Di Camargo" 
+                     class="w-full h-auto object-cover mask-fade-bottom transition-transform duration-700 group-hover:scale-105"
+                     onerror="this.style.display='none'; document.getElementById('aviso-foto').classList.remove('hidden');" />
+                
+                <!-- Mensagem de ajuda caso o ficheiro não esteja na pasta -->
+                <div id="aviso-foto" class="hidden text-center p-6 border border-dashed border-gold/40 rounded-xl m-4 bg-black/60">
+                  <i class="fa-regular fa-image text-3xl text-gold mb-2 block"></i>
+                  <p class="text-xs text-gray-300 font-medium">Salve a foto com o Zezé Di Camargo como:</p>
+                  <code class="text-xs text-gold font-bold bg-darkCard px-2 py-1 rounded mt-1 inline-block">foto-luciano.jpg</code>
+                  <p class="text-[11px] text-gray-400 mt-2">na mesma pasta deste ficheiro HTML.</p>
+                </div>
 
-    <!-- ================= SOBRE ================= -->
-    <section id="sobre" class="py-24 px-6 border-t border-gold/10 bg-[#0E0E0E]/70 relative">
-      <div class="max-w-6xl mx-auto">
-        
-        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <p class="text-xs uppercase tracking-widest text-gold font-semibold">Perfil de Autoridade</p>
-          <h2 class="font-title text-3xl sm:text-4xl font-bold">A Caneta de Sucesso e a Mente Estratégica</h2>
-          <div class="w-16 h-1 bg-gold-gradient mx-auto rounded-full mt-2"></div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-          <!-- Card Criativo -->
-          <div class="p-8 rounded-2xl bg-brandCard border border-brandCardBorder/30 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold mb-6">
-                <i class="fa-solid fa-pen-nib text-xl"></i>
+                <!-- Logo Sobreposto no Canto Superior Direito -->
+                <div class="absolute top-3 right-3 w-16 h-16 rounded-full border border-amber-500/50 bg-black/85 p-1 backdrop-blur-sm shadow-xl flex items-center justify-center overflow-hidden">
+                  <img src="logo-luciano.jpg" alt="Logo LP" class="w-full h-full object-cover rounded-full" 
+                       onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');" />
+                  <span class="hidden text-[10px] font-bold text-gold">LP</span>
+                </div>
               </div>
-              <h3 class="font-title text-2xl font-bold mb-4 gold-gradient-text">Identidade Sonora & Criação</h3>
-              <p class="text-gray-400 font-light leading-relaxed">
-                Compreensão profunda das métricas da canção: refrões fortes, narrativa emocional conectiva e estruturas concebidas para prender a atenção do ouvinte do primeiro ao último acorde.
-              </p>
-            </div>
-            <div class="mt-6 pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-gold">
-              <i class="fa-solid fa-check-circle"></i>
-              <span>Obras originais pensadas para o mercado fonográfico</span>
-            </div>
-          </div>
 
-          <!-- Card Estratégico -->
-          <div class="p-8 rounded-2xl bg-brandCard border border-brandCardBorder/30 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-xl bg-gold/10 border border-gold/30 flex items-center justify-center text-gold mb-6">
-                <i class="fa-solid fa-chart-line text-xl"></i>
+              <!-- Legenda de Autoridade -->
+              <div class="text-center py-4 px-3">
+                <p class="font-title text-sm tracking-wider uppercase text-gold font-semibold">Bastidores & Parcerias no Cenário Musical</p>
+                <p class="text-xs text-gray-400 mt-1">Conexão direta com os grandes nomes do mercado</p>
               </div>
-              <h3 class="font-title text-2xl font-bold mb-4 gold-gradient-text">Domínio Técnico das Redes</h3>
-              <p class="text-gray-400 font-light leading-relaxed">
-                Mais do que criar um produto com qualidade, o desafio moderno é torná-lo descoberto. Aplico metodologias de tráfego, gestão e posicionamento contínuo em plataformas de streaming e redes sociais.
-              </p>
-            </div>
-            <div class="mt-6 pt-6 border-t border-white/5 flex items-center gap-2 text-xs text-gold">
-              <i class="fa-solid fa-check-circle"></i>
-              <span>Alcance sustentável e retenção real de público</span>
             </div>
           </div>
         </div>
@@ -178,196 +175,157 @@
       </div>
     </section>
 
-    <!-- ================= SOLUÇÕES / ÁREAS DE ATUAÇÃO ================= -->
-    <section id="solucoes" class="py-24 px-6 relative">
-      <div class="max-w-7xl mx-auto">
-        
-        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <p class="text-xs uppercase tracking-widest text-gold font-semibold">Serviços Especializados</p>
-          <h2 class="font-title text-3xl sm:text-4xl font-bold">Soluções Completas para Projetos de Alto Impacto</h2>
+    <!-- ================= SEÇÃO SOBRE ================= -->
+    <section id="sobre" class="py-24 px-6 border-t border-amber-500/10 bg-[#0E0E0E]/70">
+      <div class="max-w-5xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+          <p class="text-xs uppercase tracking-widest text-gold font-semibold">Perfil Profissional</p>
+          <h2 class="font-title text-3xl sm:text-4xl font-bold">Dupla Visão: Arte e Escala Digital</h2>
           <div class="w-16 h-1 bg-gold-gradient mx-auto rounded-full mt-2"></div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
-          <!-- Pilar 1 -->
-          <div class="p-8 rounded-2xl bg-[#111111] border border-gold/20 hover:border-gold/60 transition-all duration-300 relative group flex flex-col">
-            <div class="w-14 h-14 rounded-2xl bg-black border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-compact-disc"></i>
-            </div>
-            <h3 class="font-title text-xl font-bold mb-3 text-white">Composição Musical</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-              Desenvolvimento de letras autorais com ganchos comerciais marcantes, adequadas a múltiplos géneros contemporâneos e estruturadas para maximizar o apelo das massas.
+        <div class="p-8 sm:p-12 rounded-3xl bg-darkCard border border-amber-500/20 gold-glow">
+          <div class="space-y-6 text-gray-300 font-light leading-relaxed text-base sm:text-lg">
+            <p>
+              <strong class="text-white font-semibold">Luciano de Paula</strong> une o talento autoral de composição ao ecossistema moderno de distribuição e plataformas online.
             </p>
-            <ul class="text-xs text-gray-300 space-y-2 border-t border-white/5 pt-4">
-              <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Letras inéditas e conceituais</li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Métricas com foco em refrões chiclete</li>
-            </ul>
+            <p>
+              Com sensibilidade para construir melodias cativantes e refrões fortes, a sua actuação abrange também a estratégia técnica: posicionamento de canais, gestão de tráfego, audiência e retenção.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-8 border-t border-white/10">
+            <div class="flex items-center gap-3 text-gold">
+              <i class="fa-solid fa-check-circle text-lg"></i>
+              <span class="text-sm font-medium text-gray-200">Refrões e conceitos estruturados para alta adesão</span>
+            </div>
+            <div class="flex items-center gap-3 text-gold">
+              <i class="fa-solid fa-check-circle text-lg"></i>
+              <span class="text-sm font-medium text-gray-200">Visão técnica de plataformas e distribuição</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SEÇÃO DE DOIS PILARES ================= -->
+    <section id="atuacao" class="py-24 px-6">
+      <div class="max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+          <p class="text-xs uppercase tracking-widest text-gold font-semibold">Especialidades</p>
+          <h2 class="font-title text-3xl sm:text-4xl font-bold">Dois Pilares de Atuação</h2>
+          <div class="w-16 h-1 bg-gold-gradient mx-auto rounded-full mt-2"></div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Pilar 1 -->
+          <div class="p-8 sm:p-10 rounded-3xl bg-darkCard border border-amber-500/20 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-black border border-amber-500/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-music"></i>
+              </div>
+              <p class="text-xs uppercase tracking-widest text-gold font-semibold mb-2">Pilar 01</p>
+              <h3 class="font-title text-2xl font-bold mb-4 text-white">Composição & Arte Fonográfica</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-6 font-light">
+                Criação de obras inéditas com arranjos conceituais e ganchos líricos marcantes, focados no apelo popular, ligação emocional e dinâmicas de palco.
+              </p>
+            </div>
+            <div class="space-y-2 pt-4 border-t border-white/5 text-xs text-gray-300">
+              <p class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Letras e métricas com alta fixação</p>
+              <p class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Repertório alinhado com o mercado atual</p>
+            </div>
           </div>
 
           <!-- Pilar 2 -->
-          <div class="p-8 rounded-2xl bg-[#111111] border border-gold/20 hover:border-gold/60 transition-all duration-300 relative group flex flex-col">
-            <div class="w-14 h-14 rounded-2xl bg-black border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-sliders"></i>
+          <div class="p-8 sm:p-10 rounded-3xl bg-darkCard border border-amber-500/20 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group">
+            <div>
+              <div class="w-14 h-14 rounded-2xl bg-black border border-amber-500/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
+                <i class="fa-solid fa-chart-line"></i>
+              </div>
+              <p class="text-xs uppercase tracking-widest text-gold font-semibold mb-2">Pilar 02</p>
+              <h3 class="font-title text-2xl font-bold mb-4 text-white">Plataformas Digitais & Marketing</h3>
+              <p class="text-gray-400 text-sm leading-relaxed mb-6 font-light">
+                Planeamento de lançamentos e estruturação de presença online em canais de streaming e redes, transformando conteúdos em activos de tração contínua.
+              </p>
             </div>
-            <h3 class="font-title text-xl font-bold mb-3 text-white">Gestão de Plataformas</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-              Configuração, otimização de perfil e estratégias para plataformas digitais de áudio e vídeo, aumentando a relevância orgânica e a monetização de ativos.
-            </p>
-            <ul class="text-xs text-gray-300 space-y-2 border-t border-white/5 pt-4">
-              <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Otimização em canais e agregadores</li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Estruturação de distribuição contínua</li>
-            </ul>
-          </div>
-
-          <!-- Pilar 3 -->
-          <div class="p-8 rounded-2xl bg-[#111111] border border-gold/20 hover:border-gold/60 transition-all duration-300 relative group flex flex-col">
-            <div class="w-14 h-14 rounded-2xl bg-black border border-gold/30 flex items-center justify-center text-gold text-2xl mb-6 group-hover:scale-110 transition-transform">
-              <i class="fa-solid fa-bullhorn"></i>
+            <div class="space-y-2 pt-4 border-t border-white/5 text-xs text-gray-300">
+              <p class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Gestão e monetização em plataformas</p>
+              <p class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Estratégias de escala e posicionamento</p>
             </div>
-            <h3 class="font-title text-xl font-bold mb-3 text-white">Marketing & Lançamentos</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
-              Planeamento estratégico de lançamentos, posicionamento de marca nas redes sociais e campanhas focadas na expansão de audiência e envolvimento do público.
-            </p>
-            <ul class="text-xs text-gray-300 space-y-2 border-t border-white/5 pt-4">
-              <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Campanhas orientadas a conversão</li>
-              <li class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Branding pessoal consistente</li>
-            </ul>
           </div>
-
         </div>
-
       </div>
     </section>
 
-    <!-- ================= DIFERENCIAIS ================= -->
-    <section id="diferenciais" class="py-20 px-6 bg-[#0E0E0E] border-y border-gold/15">
+    <!-- ================= BASTIDORES & PARCERIAS ================= -->
+    <section id="bastidores" class="py-20 px-6 bg-[#0E0E0E] border-y border-amber-500/15">
       <div class="max-w-6xl mx-auto text-center space-y-10">
-        <h2 class="font-title text-3xl sm:text-4xl font-bold">Por que unificar Arte e Estratégia Digital?</h2>
-        
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div class="p-6 rounded-xl bg-black/50 border border-gold/15">
-            <p class="text-3xl font-extrabold gold-gradient-text mb-2">100%</p>
-            <p class="text-xs uppercase text-gray-400 font-semibold tracking-wider">Obras Originais</p>
+        <div class="max-w-2xl mx-auto space-y-2">
+          <p class="text-xs uppercase tracking-widest text-gold font-semibold">Credibilidade</p>
+          <h2 class="font-title text-3xl font-bold">Presença no Mercado Artístico</h2>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="p-6 rounded-2xl bg-black/60 border border-amber-500/15">
+            <i class="fa-solid fa-compact-disc text-gold text-2xl mb-2"></i>
+            <p class="font-semibold text-sm">Obras Autorais</p>
           </div>
-          <div class="p-6 rounded-xl bg-black/50 border border-gold/15">
-            <p class="text-3xl font-extrabold gold-gradient-text mb-2">+Alcance</p>
-            <p class="text-xs uppercase text-gray-400 font-semibold tracking-wider">Distribuição Estruturada</p>
+          <div class="p-6 rounded-2xl bg-black/60 border border-amber-500/15">
+            <i class="fa-solid fa-bullseye text-gold text-2xl mb-2"></i>
+            <p class="font-semibold text-sm">Foco no Mercado</p>
           </div>
-          <div class="p-6 rounded-xl bg-black/50 border border-gold/15">
-            <p class="text-3xl font-extrabold gold-gradient-text mb-2">Foco</p>
-            <p class="text-xs uppercase text-gray-400 font-semibold tracking-wider">Mercado Atual</p>
+          <div class="p-6 rounded-2xl bg-black/60 border border-amber-500/15">
+            <i class="fa-solid fa-network-wired text-gold text-2xl mb-2"></i>
+            <p class="font-semibold text-sm">Alcance Digital</p>
           </div>
-          <div class="p-6 rounded-xl bg-black/50 border border-gold/15">
-            <p class="text-3xl font-extrabold gold-gradient-text mb-2">Direto</p>
-            <p class="text-xs uppercase text-gray-400 font-semibold tracking-wider">Atendimento Exclusivo</p>
+          <div class="p-6 rounded-2xl bg-black/60 border border-amber-500/15">
+            <i class="fa-solid fa-handshake text-gold text-2xl mb-2"></i>
+            <p class="font-semibold text-sm">Parcerias de Valor</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= DEPOIMENTOS / PROVA SOCIAL ================= -->
-    <section id="depoimentos" class="py-24 px-6 relative">
-      <div class="max-w-6xl mx-auto">
-        
-        <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <p class="text-xs uppercase tracking-widest text-gold font-semibold">Prova Social</p>
-          <h2 class="font-title text-3xl sm:text-4xl font-bold">Quem Confia no Trabalho</h2>
-          <div class="w-16 h-1 bg-gold-gradient mx-auto rounded-full mt-2"></div>
-        </div>
+    <!-- ================= SEÇÃO DE CONTATO ================= -->
+    <section id="contato" class="py-24 px-6 bg-gradient-to-b from-[#121212] to-black text-center relative overflow-hidden">
+      <div class="absolute inset-0 bg-gold/5 blur-[130px] pointer-events-none"></div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          
-          <div class="p-8 rounded-2xl bg-brandCard border border-white/5 relative flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="flex text-gold text-xs gap-1">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p class="text-gray-400 text-sm italic">
-                "A facilidade do Luciano em criar composições dinâmicas que conectam imediatamente com o público é admirável. Ele compreende exatamente o que o ouvinte quer ouvir."
-              </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-white/5">
-              <p class="font-semibold text-white text-sm">Parceiro Musical</p>
-              <p class="text-xs text-gray-500">Produtor & Artista</p>
-            </div>
-          </div>
-
-          <div class="p-8 rounded-2xl bg-brandCard border border-gold/30 relative flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="flex text-gold text-xs gap-1">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p class="text-gray-300 text-sm italic">
-                "A visão sobre plataformas digitais mudou a forma como distribuímos os nossos lançamentos. Profissionalismo e visão estratégica impecáveis."
-              </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-white/5">
-              <p class="font-semibold text-white text-sm">Gestor de Conteúdo</p>
-              <p class="text-xs text-gray-500">Agência Digital</p>
-            </div>
-          </div>
-
-          <div class="p-8 rounded-2xl bg-brandCard border border-white/5 relative flex flex-col justify-between">
-            <div class="space-y-4">
-              <div class="flex text-gold text-xs gap-1">
-                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-              </div>
-              <p class="text-gray-400 text-sm italic">
-                "Uma rara união de talento com a caneta e domínio técnico de campanhas. Os resultados nas métricas foram evidentes desde o início."
-              </p>
-            </div>
-            <div class="mt-6 pt-4 border-t border-white/5">
-              <p class="font-semibold text-white text-sm">Intérprete Independente</p>
-              <p class="text-xs text-gray-500">Músico</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ================= CTA FINAL / CONTACTO ================= -->
-    <section class="py-24 px-6 border-t border-gold/20 bg-gradient-to-b from-[#111111] to-[#060606] text-center relative overflow-hidden">
-      <div class="absolute inset-0 bg-gold/5 blur-[120px] pointer-events-none"></div>
-
-      <div class="max-w-4xl mx-auto space-y-8 relative z-10">
+      <div class="max-w-3xl mx-auto space-y-8 relative z-10">
         <h2 class="font-title text-3xl sm:text-5xl font-extrabold tracking-tight">
-          Pronto para elevar o padrão do seu <span class="gold-gradient-text">próximo projeto</span>?
+          Pronto para iniciar um <span class="gold-gradient-text">novo projeto</span>?
         </h2>
         
-        <p class="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto font-light">
-          Seja para adquirir uma composição autoral inédita ou alavancar a presença da sua marca através de marketing digital e otimização de canais.
+        <p class="text-gray-400 text-base sm:text-lg font-light">
+          Entre em contacto direto para aquisição de composições ou desenvolvimento de estratégias de marketing digital.
         </p>
 
         <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-5">
           <a href="https://wa.me/5562992376109" target="_blank" rel="noopener noreferrer"
-             class="w-full sm:w-auto px-10 py-5 rounded-full bg-gold-gradient text-black font-bold text-sm tracking-wider uppercase transition-all duration-300 transform hover:scale-105 gold-button-glow flex items-center justify-center gap-3">
-            <i class="fa-brands fa-whatsapp text-xl"></i>
-            <span>Conversar Agora no WhatsApp</span>
+             class="w-full sm:w-auto px-10 py-5 rounded-full bg-gold-gradient text-black font-bold text-sm tracking-wider uppercase transition-all duration-300 transform hover:scale-105 gold-btn-glow flex items-center justify-center gap-3">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+            <span>WhatsApp: +55 (62) 99237-6109</span>
           </a>
 
           <a href="https://www.instagram.com/lucianodepaula62" target="_blank" rel="noopener noreferrer"
-             class="w-full sm:w-auto px-10 py-5 rounded-full border border-gold/40 hover:border-gold bg-[#151515] text-[#EDEDED] font-semibold text-sm tracking-wider uppercase transition-all duration-300 hover:bg-[#202020] flex items-center justify-center gap-3">
-            <i class="fa-brands fa-instagram text-gold text-xl"></i>
-            <span>Seguir no Instagram</span>
+             class="w-full sm:w-auto px-10 py-5 rounded-full border border-amber-500/40 hover:border-gold bg-darkCard text-[#EDEDED] font-semibold text-sm tracking-wider uppercase transition-all duration-300 hover:bg-[#202020] flex items-center justify-center gap-3">
+            <i class="fa-brands fa-instagram text-gold text-2xl"></i>
+            <span>@lucianodepaula62</span>
           </a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
+  <!-- ================= RODAPÉ ================= -->
   <footer class="py-10 px-6 border-t border-white/5 bg-[#080808] text-center text-xs text-gray-500">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <p>© 2026 Luciano de Paula. Todos os direitos reservados.</p>
       <div class="flex items-center gap-6">
-        <a href="https://www.instagram.com/lucianodepaula62" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors">
-          <i class="fa-brands fa-instagram text-base"></i>
+        <a href="https://www.instagram.com/lucianodepaula62" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors text-base" title="Instagram">
+          <i class="fa-brands fa-instagram"></i>
         </a>
-        <a href="https://wa.me/5562992376109" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors">
-          <i class="fa-brands fa-whatsapp text-base"></i>
+        <a href="https://wa.me/5562992376109" target="_blank" rel="noopener noreferrer" class="hover:text-gold transition-colors text-base" title="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
         </a>
       </div>
     </div>
