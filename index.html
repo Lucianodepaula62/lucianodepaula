@@ -42,56 +42,35 @@
   </script>
 
   <style>
-    /* Tipografia metálica em degradê dourado */
     .gold-gradient-text {
       background: linear-gradient(135deg, #FFF3C4 0%, #D4AF37 55%, #AA7C11 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-
-    /* Brilho dourado premium */
     .gold-glow {
-      box-shadow: 0 0 35px rgba(212, 175, 55, 0.22);
+      box-shadow: 0 0 40px rgba(212, 175, 55, 0.22);
     }
     .gold-btn-glow:hover {
       box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
     }
-
-    /* Fusão suave na base da foto com o fundo escuro */
-    .mask-fade-bottom {
-      -webkit-mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-      mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
-    }
-
-    /* Otimização de nitidez e antialiasing para fotos e gráficos */
     .hd-sharp-image {
       image-rendering: -webkit-optimize-contrast;
-      image-rendering: crisp-edges;
       transform: translateZ(0);
-      -webkit-font-smoothing: subpixel-antialiased;
       backface-visibility: hidden;
-      filter: contrast(1.10) brightness(1.04) saturate(1.05);
-    }
-
-    .hd-sharp-logo {
-      image-rendering: -webkit-optimize-contrast;
-      transform: translateZ(0);
-      filter: contrast(1.08) brightness(1.02);
+      filter: contrast(1.05) brightness(1.02);
     }
   </style>
 </head>
 <body class="bg-darkBase text-[#EDEDED] font-body selection:bg-gold selection:text-black antialiased overflow-x-hidden">
 
-  <!-- ================= NAVBAR ================= -->
+  <!-- ================= NAVBAR FIXA ================= -->
   <header class="fixed top-0 left-0 w-full z-50 bg-[#0B0B0B]/90 backdrop-blur-md border-b border-amber-500/20 transition-all duration-300">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       
-      <!-- Logo Navbar -->
+      <!-- Marca / Logo Miniatura -->
       <a href="#" class="flex items-center gap-3 group">
         <div class="w-11 h-11 rounded-full border border-amber-500/40 overflow-hidden bg-black p-0.5 group-hover:border-gold transition-colors flex items-center justify-center shadow-lg">
-          <img src="https://i.postimg.cc/bGD5Nv1R/logo-luciano-jpg.jpg" 
-               alt="Logo Luciano de Paula" 
-               class="w-full h-full object-cover rounded-full hd-sharp-logo" />
+          <img src="https://i.postimg.cc/bGD5Nv1R/logo-luciano-jpg.jpg" alt="Logo Luciano de Paula" class="w-full h-full object-cover rounded-full" />
         </div>
         <div class="flex flex-col">
           <span class="font-title font-bold text-base tracking-wider uppercase gold-gradient-text">Luciano de Paula</span>
@@ -119,7 +98,7 @@
   <main class="pt-20">
     <!-- ================= HERO SECTION ================= -->
     <section class="relative min-h-[92vh] flex items-center justify-center px-6 py-16 overflow-hidden">
-      <!-- Glow dourado no fundo -->
+      <!-- Glow dourado de fundo -->
       <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-gold/10 rounded-full blur-[150px] pointer-events-none"></div>
 
       <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
@@ -155,32 +134,41 @@
           </div>
         </div>
 
-        <!-- Card da Foto de Autoridade com Filtros HD de Alta Definição -->
+        <!-- Card da Foto em Alta Resolução HD com Zezé Di Camargo -->
         <div class="lg:col-span-5 flex justify-center">
-          <div class="relative w-full max-w-[460px] group">
+          <div class="relative w-full max-w-[430px] group">
             <!-- Glow radial atrás do card -->
-            <div class="absolute inset-0 bg-gold/20 rounded-3xl blur-[50px] transform group-hover:scale-105 transition-transform duration-500"></div>
+            <div class="absolute inset-0 bg-gold/25 rounded-3xl blur-[45px] transform group-hover:scale-105 transition-all duration-500"></div>
 
-            <div class="relative p-2.5 rounded-3xl bg-gradient-to-b from-[#222222] via-darkCard to-black border border-amber-500/30 gold-glow">
-              <div class="relative rounded-2xl overflow-hidden bg-[#0A0A0A] min-h-[380px] flex items-center justify-center">
+            <div class="relative rounded-3xl bg-gradient-to-b from-[#2A2A2A] via-darkCard to-black border border-amber-500/40 p-2.5 gold-glow">
+              
+              <!-- Container da Imagem com proporção de estúdio -->
+              <div class="relative w-full h-[510px] rounded-2xl overflow-hidden bg-black flex items-center justify-center">
                 
-                <!-- Foto Principal com Zezé Di Camargo Otimizada em HD -->
-                <img src="https://i.postimg.cc/DWJNyz1r/foto-luciano-jpg.jpg" 
+                <!-- Foto em Alta Definição com Fallback Direct Link -->
+                <img src="https://i.ibb.co/YBHtqc1y/foto-luciano-hd.jpg" 
                      alt="Luciano de Paula e Zezé Di Camargo" 
-                     class="w-full h-auto object-cover mask-fade-bottom hd-sharp-image transition-transform duration-700 group-hover:scale-105" />
+                     class="w-full h-full object-cover object-center hd-sharp-image transition-transform duration-700 group-hover:scale-105"
+                     onerror="this.onerror=null; this.src='https://i.ibb.co/YBHtqc1y/image.jpg';" />
 
-                <!-- Selo da Logo Dourada LP Sobreposto -->
-                <div class="absolute top-3 right-3 w-16 h-16 rounded-full border border-amber-500/60 bg-black/85 p-1 backdrop-blur-sm shadow-2xl flex items-center justify-center overflow-hidden">
-                  <img src="https://i.postimg.cc/bGD5Nv1R/logo-luciano-jpg.jpg" 
-                       alt="Logo LP" 
-                       class="w-full h-full object-cover rounded-full hd-sharp-logo" />
+                <!-- Vinheta escura nas bordas para integração perfeita com o Dark Mode -->
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-transparent to-black/30 pointer-events-none"></div>
+
+                <!-- Selo da Logo LP Dourada Sobreposta com Vidro Fumê -->
+                <div class="absolute top-4 right-4 w-14 h-14 rounded-full border-2 border-gold/70 bg-black/85 p-1 backdrop-blur-md shadow-2xl flex items-center justify-center overflow-hidden">
+                  <img src="https://i.postimg.cc/bGD5Nv1R/logo-luciano-jpg.jpg" alt="Logo LP" class="w-full h-full object-cover rounded-full" />
                 </div>
-              </div>
 
-              <!-- Legenda de Autoridade -->
-              <div class="text-center py-4 px-3">
-                <p class="font-title text-sm tracking-wider uppercase text-gold font-semibold">Bastidores & Parcerias no Cenário Musical</p>
-                <p class="text-xs text-gray-400 mt-1">Conexão direta com os grandes nomes do mercado</p>
+                <!-- Legenda de Autoridade na Barra Inferior -->
+                <div class="absolute inset-x-0 bottom-0 p-5 text-center bg-gradient-to-t from-black via-black/85 to-transparent">
+                  <p class="font-title text-sm tracking-wider uppercase text-gold font-bold drop-shadow-md">
+                    Bastidores & Parcerias no Cenário Musical
+                  </p>
+                  <p class="text-[11px] text-gray-300 mt-0.5 font-light">
+                    Conexão direta com os grandes nomes do mercado
+                  </p>
+                </div>
+
               </div>
             </div>
           </div>
@@ -232,6 +220,7 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
           <!-- Pilar 1: Composição -->
           <div class="p-8 sm:p-10 rounded-3xl bg-darkCard border border-amber-500/20 hover:border-gold/50 transition-all duration-300 flex flex-col justify-between group">
             <div>
@@ -267,6 +256,7 @@
               <p class="flex items-center gap-2"><i class="fa-solid fa-angle-right text-gold"></i> Estratégias de tráfego, engajamento e branding</p>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -313,7 +303,7 @@
           Entre em contato direto para composições inéditas ou estratégias de plataformas e marketing digital.
         </p>
 
-        <!-- Botões de Contato -->
+        <!-- Botões de Contato Obrigatórios -->
         <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-5">
           <!-- WhatsApp -->
           <a href="https://wa.me/5562992376109" target="_blank" rel="noopener noreferrer"
